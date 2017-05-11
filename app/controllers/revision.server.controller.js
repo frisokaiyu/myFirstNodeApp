@@ -4,7 +4,7 @@
 let Revision = require("../models/revision");
 
 module.exports.showTitleForm=function(req,res){
-	res.render("../views/titleForm.pug")
+	res.render("titleForm.pug")
 }
 
 module.exports.getLatest=function(req,res){
@@ -17,7 +17,7 @@ module.exports.getLatest=function(req,res){
 		}else{
 			console.log(result)
 			revision = result[0]
-			res.render('revision.pug',{title: title, revision:revision})
+			res.render("revision.pug",{title: title, revision:revision})
 		}	
 	})	
 

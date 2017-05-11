@@ -22,7 +22,7 @@ function showResult(req,res) {
     let sess = req.session;
     if ("vote" in sess) {
         console.log("opertate too quik");
-        res.render('../views/surveyresult.ejs', {
+        res.render("surveyresult.ejs", {
             products: products,
             surveyresults: surveyresults
         });
@@ -32,7 +32,7 @@ function showResult(req,res) {
             surveyresults.mp[productidx]++;
         else
             surveyresults.fp[productidx]++;
-        res.render('../views/surveyresult.ejs', {
+        res.render("surveyresult.ejs", {
             products: products,
             surveyresults: surveyresults
         });

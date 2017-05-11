@@ -1,3 +1,6 @@
+*{
+   color: darkslategray;
+}
 table {
    border: collapse;
    border-spacing: 0;

@@ -18,7 +18,7 @@ RevisionSchema.statics.findTitleLatestRev = function(title, callback){
 	.limit(1)
 	.exec(callback)
 }
-// mongoose.model(modelName, schema):
+// mongoose.model(modelName, schema, collection):
 var Revision = mongoose.model('Revision', RevisionSchema, 'revisions')
 
 module.exports = Revision;
