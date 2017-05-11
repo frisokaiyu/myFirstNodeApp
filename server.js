@@ -26,6 +26,8 @@ app.locals.surveyresults = {
     fp:[0,0,0,0], mp:[0,0,0,0]
 };
 //set() Assigns setting name to value
+//'views', the directory where the template files are located.
+//See at:https://expressjs.com/en/guide/using-template-engines.html
 app.set('views', path.join(__dirname,'/app/views'));//_dirname => pwd
 
 /*
@@ -34,16 +36,16 @@ app.set('views', path.join(__dirname,'/app/views'));//_dirname => pwd
 //use express.static to collect the static source
 //then u can access the static source,etc localhost:3000/css/surveystyle.css
 //See at: http://www.expressjs.com.cn/starter/static-files.html
-app.use(express.static(path.join(__dirname, '/public')));
+app.use(express.static(path.join(__dirname, '/app/views')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(session({
     secret:'tu!HUbd&*nreA',
-    cookie:{maxAge:1000*10}, //session age 10 seconds
+    cookie:{maxAge:1000*7}, //session age 7 seconds
     resave:false,
     saveUninitialized:false
 }));
-// use survey function(survey.server.routes) in the path：/
+// use survey function(survey.server.routes) in the url path：/
 app.use('/', survey);
 
 /*
